@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/Nordeste.unity
+  isLoaded: 1
+  isActive: 1
