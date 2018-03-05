@@ -226,6 +226,7 @@
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\Navmesh.cginc" />
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\Navmesh.shader" />
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
+    <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Menu\GameJamTemplateReadMe.txt" />
     <None Include="Assets\Plugins\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
