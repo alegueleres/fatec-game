@@ -6,10 +6,9 @@ public class AxeScript : MonoBehaviour {
 
     public CombatScript combatScript;
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.gameObject.tag);
-        if (EnemyScript.verifyAttack() && other.gameObject.tag == "Hero")
+        if (EnemyScript.verifyAttack() && !EnemyScript.verifyDie() && other.tag == "Hero")
         {
             combatScript.removeHeroLife(5);
         }

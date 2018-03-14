@@ -14,17 +14,21 @@ public class EnemyScript : MonoBehaviour {
     }
 
     void Update () {
-        if (animator.GetBool("enemyDied") || animator.GetBool("win"))
+        if (!animator.GetBool("enemyDied"))
         {
-            canMove(false);
-        }
+            if (animator.GetBool("enemyDied") || animator.GetBool("win"))
+            {
+                canMove(false);
+            }
 
-        if (animator.GetBool("enemyAttack"))
-        {
-            canMove(false);
-        } else
-        {
-            canMove(true);
+            if (animator.GetBool("enemyAttack"))
+            {
+                canMove(false);
+            }
+            else
+            {
+                canMove(true);
+            }
         }
     }
 
@@ -52,4 +56,10 @@ public class EnemyScript : MonoBehaviour {
     {
         return animator.GetBool("enemyAttack");
     }
+
+    public static bool verifyDie()
+    {
+        return animator.GetBool("enemyDied");
+    }
+
 }

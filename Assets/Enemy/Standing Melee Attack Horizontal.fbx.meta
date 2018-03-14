@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1a41b9788d2bae94e9754938236e9b88
-timeCreated: 1520979074
+guid: c42ad92eb27f51b47b0c9071144ffa87
+timeCreated: 1521026141
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -141,7 +141,7 @@ ModelImporter:
     400130: Spine1
     400132: Spine2
     400134: //RootNode
-    7400000: meleeAttackHorizontal
+    7400000: horizontalAttack
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -168,7 +168,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: meleeAttackHorizontal
+      name: horizontalAttack
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 144

@@ -8,7 +8,6 @@ public class SwordScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
         if (HeroMovements.verifyIfAttack() && other.tag == "Enemy")
         {
             combatScript.removeEnemyLife(3);

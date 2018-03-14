@@ -109,49 +109,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &302759099 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 73158d3887e2824469b28c67786dcd9d, type: 3}
-  m_PrefabInternal: {fileID: 1492364631}
---- !u!65 &302759102
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 302759099}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.73600566, y: 0.17080522, z: 1.4758195}
-  m_Center: {x: 1.1751754, y: 1.666671, z: 0.22080046}
---- !u!54 &302759103
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 302759099}
-  serializedVersion: 2
-  m_Mass: 40
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &302759104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 302759099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9afe925fc3e55241aa4896c1dad5baa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combatScript: {fileID: 592782813}
 --- !u!1001 &424351849
 Prefab:
   m_ObjectHideFlags: 0
@@ -390,7 +347,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 491230426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 1.01, z: 1.12}
+  m_LocalPosition: {x: -0.08, y: 0.793, z: 1.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424351850}
@@ -655,6 +612,10 @@ Prefab:
       propertyPath: m_TagString
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: f78d86611e6448045b5b0e3023a8cf58, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f78d86611e6448045b5b0e3023a8cf58, type: 3}
   m_IsPrefabParent: 0
@@ -690,7 +651,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &740619164
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -841,8 +802,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.6486718, z: 1}
+  m_Center: {x: 0, y: -0.17566456, z: 0}
 --- !u!114 &764219083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,49 +986,62 @@ MonoBehaviour:
   CellHeight: 3
   AddGaps: 0
   GoalPrefab: {fileID: 159624, guid: 850205124263c924ea0aa82f0fdf2673, type: 2}
---- !u!1 &1270955289 stripped
+--- !u!1 &1277000037 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 100072, guid: f78d86611e6448045b5b0e3023a8cf58, type: 3}
+  m_PrefabParentObject: {fileID: 100142, guid: f78d86611e6448045b5b0e3023a8cf58, type: 3}
   m_PrefabInternal: {fileID: 740619159}
---- !u!114 &1270955292
+--- !u!114 &1277000039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1270955289}
+  m_GameObject: {fileID: 1277000037}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 228e2edc01504bb4a9ba0fbcdbc9ae4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   combatScript: {fileID: 592782813}
---- !u!65 &1270955293
+--- !u!65 &1277000040
 BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1270955289}
+  m_GameObject: {fileID: 1277000037}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.30036518, y: 0.09282963, z: 1.0142858}
-  m_Center: {x: 0.7965743, y: 1.4115677, z: 0.24661732}
---- !u!54 &1270955294
-Rigidbody:
+  m_Size: {x: 0.31477797, y: 0.116691336, z: 1.002286}
+  m_Center: {x: 0.08439891, y: 0.0022277387, z: 0.2881769}
+--- !u!1 &1366041128 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100098, guid: 73158d3887e2824469b28c67786dcd9d, type: 3}
+  m_PrefabInternal: {fileID: 1492364631}
+--- !u!65 &1366041129
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1270955289}
+  m_GameObject: {fileID: 1366041128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Mass: 30
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_Size: {x: 0.70926094, y: 0.14323711, z: 1.4528098}
+  m_Center: {x: 0.31211376, y: -0.05697012, z: 0.32339168}
+--- !u!114 &1366041130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1366041128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe925fc3e55241aa4896c1dad5baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatScript: {fileID: 592782813}
 --- !u!1 &1387240498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1302,14 @@ Prefab:
       propertyPath: m_TagString
       value: Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 73158d3887e2824469b28c67786dcd9d, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 73158d3887e2824469b28c67786dcd9d, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73158d3887e2824469b28c67786dcd9d, type: 3}
   m_IsPrefabParent: 0
@@ -1349,7 +1331,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!82 &1492364634
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1609,8 +1591,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1550399344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00006118, y: 0.649, z: 0}
-  m_LocalScale: {x: 2.4113781, y: 0.69162995, z: 4.4150195}
+  m_LocalPosition: {x: 0.000061174, y: 0.649, z: 0.26}
+  m_LocalScale: {x: 1.5532482, y: 0.69162995, z: 2.6254845}
   m_Children: []
   m_Father: {fileID: 1492364640}
   m_RootOrder: 2
