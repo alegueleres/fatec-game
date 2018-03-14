@@ -94,10 +94,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AstarAI.cs" />
+    <Compile Include="Assets\AxeScript.cs" />
+    <Compile Include="Assets\CombatScript.cs" />
     <Compile Include="Assets\Enemy\EnemyScript.cs" />
     <Compile Include="Assets\FollowCamera.cs" />
     <Compile Include="Assets\GameLevelManager.cs" />
     <Compile Include="Assets\HeroMovements.cs" />
+    <Compile Include="Assets\IgnoreCollisionScript.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\BasicMazeGenerator.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\DivisionMazeGenerator.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\MazeCell.cs" />
@@ -117,6 +120,7 @@
     <Compile Include="Assets\Menu\Scripts\ShowPanels.cs" />
     <Compile Include="Assets\Menu\Scripts\StartOptions.cs" />
     <Compile Include="Assets\ShouldFly.cs" />
+    <Compile Include="Assets\SwordScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\Navmesh.cginc" />

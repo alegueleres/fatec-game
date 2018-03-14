@@ -10,6 +10,8 @@ TagManager:
   - Obstacles
   - Hero
   - Enemy
+  - Sword
+  - Axe
   layers:
   - Default
   - TransparentFX

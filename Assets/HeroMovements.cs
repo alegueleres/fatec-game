@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroMovements : MonoBehaviour {
 
-    private Animator animator;
+    private static Animator animator;
 
     public float runSpeed = 3.0f;
 
@@ -19,43 +19,50 @@ public class HeroMovements : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetAxis("Vertical") > 0 && !verifyIfAttack() && !verifyIfBlocking())
+        if (!animator.GetBool("Died"))
         {
-            animator.SetBool("Run", true);
-            moveVertical(Input.GetAxis("Vertical") * Time.deltaTime * runSpeed);
-        } else
-        {
-            animator.SetBool("Run", false);
-        }
+            if (Input.GetAxis("Vertical") > 0 && !verifyIfAttack() && !verifyIfBlocking())
+            {
+                animator.SetBool("Run", true);
+                moveVertical(Input.GetAxis("Vertical") * Time.deltaTime * runSpeed);
+            }
+            else
+            {
+                animator.SetBool("Run", false);
+            }
 
-        if (Input.GetAxis("Vertical") < 0 && !verifyIfAttack() && !verifyIfBlocking())
-        {
-            animator.SetBool("Back", true);
-            moveVertical(Input.GetAxis("Vertical") * Time.deltaTime * backSpeed);
-        }
-        else
-        {
-            animator.SetBool("Back", false);
-        }
+            if (Input.GetAxis("Vertical") < 0 && !verifyIfAttack() && !verifyIfBlocking())
+            {
+                animator.SetBool("Back", true);
+                moveVertical(Input.GetAxis("Vertical") * Time.deltaTime * backSpeed);
+            }
+            else
+            {
+                animator.SetBool("Back", false);
+            }
 
-        if (Input.GetButton("Fire1")) {
-            animator.SetBool("Attack", true);
-        } else
-        {
-            animator.SetBool("Attack", false);
-        }
+            if (Input.GetButton("Fire1"))
+            {
+                animator.SetBool("Attack", true);
+            }
+            else
+            {
+                animator.SetBool("Attack", false);
+            }
 
-        if (Input.GetButton("Fire2"))
-        {
-            animator.SetBool("Block", true);
-        }
-        else
-        {
-            animator.SetBool("Block", false);
-        }
+            if (Input.GetButton("Fire2"))
+            {
+                animator.SetBool("Block", true);
+            }
+            else
+            {
+                animator.SetBool("Block", false);
+            }
 
-        if (!verifyIfAttack() && !verifyIfBlocking()) {
-            moveHorizontal(Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+            if (!verifyIfAttack() && !verifyIfBlocking())
+            {
+                moveHorizontal(Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+            }
         }
     }
 
@@ -69,7 +76,7 @@ public class HeroMovements : MonoBehaviour {
         transform.Rotate(0, speed, 0);
     }
 
-    private bool verifyIfAttack()
+    public static bool verifyIfAttack()
     {
        return animator.GetBool("Attack");
     }

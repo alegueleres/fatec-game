@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour {
 
-    private Animator animator;
+    private static Animator animator;
 
     public GameObject enemy;
 
@@ -14,11 +14,17 @@ public class EnemyScript : MonoBehaviour {
     }
 
     void Update () {
-        if (animator.GetBool("enemyDied"))
+        if (animator.GetBool("enemyDied") || animator.GetBool("win"))
         {
-            AIPath aipath = enemy.GetComponent<AIPath>();
-            aipath.canMove = false;
-            aipath.canSearch = false;
+            canMove(false);
+        }
+
+        if (animator.GetBool("enemyAttack"))
+        {
+            canMove(false);
+        } else
+        {
+            canMove(true);
         }
     }
 
@@ -33,5 +39,17 @@ public class EnemyScript : MonoBehaviour {
     void OnTriggerExit(Collider collider)
     {
         animator.SetBool("enemyAttack", false);
+    }
+
+    private void canMove(bool moveAndSearch)
+    {
+        AIPath aipath = enemy.GetComponent<AIPath>();
+        aipath.canMove = moveAndSearch;
+        aipath.canSearch = moveAndSearch;
+    }
+
+    public static bool verifyAttack()
+    {
+        return animator.GetBool("enemyAttack");
     }
 }

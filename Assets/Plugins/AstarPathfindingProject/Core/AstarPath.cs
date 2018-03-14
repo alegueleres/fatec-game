@@ -760,20 +760,22 @@ public class AstarPath : VersionedMonoBehaviour {
 	 * \see Pathfinding.Path.DebugString
 	 */
 	private void LogPathResults (Path p) {
+        /*
+
 		if (logPathResults == PathLog.None || (logPathResults == PathLog.OnlyErrors && !p.error)) {
 			return;
 		}
 
 		string debug = p.DebugString(logPathResults);
-
 		if (logPathResults == PathLog.InGame) {
 			inGameDebugPath = debug;
 		} else {
 			Debug.Log(debug);
 		}
-	}
+        */
+    }
 
-	/**
+    /**
 	 * Checks if any work items need to be executed
 	 * then runs pathfinding for a while (if not using multithreading because
 	 * then the calculation happens in other threads)
@@ -784,7 +786,7 @@ public class AstarPath : VersionedMonoBehaviour {
 	 * \see PathProcessor.TickNonMultithreaded
 	 * \see PathReturnQueue.ReturnPaths
 	 */
-	private void Update () {
+    private void Update () {
 		// This class uses the [ExecuteInEditMode] attribute
 		// So Update is called even when not playing
 		// Don't do anything when not in play mode
