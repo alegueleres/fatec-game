@@ -24,7 +24,6 @@ public class EnemyScript : MonoBehaviour {
 
     void OnTriggerStay(Collider collider)
     {
-        Debug.Log(collider.tag == "Hero");
         if (collider.tag == "Hero")
         {
             animator.SetBool("enemyAttack", true);

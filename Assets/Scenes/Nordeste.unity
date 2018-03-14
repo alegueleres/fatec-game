@@ -693,10 +693,10 @@ GameObject:
   m_Component:
   - component: {fileID: 491230429}
   - component: {fileID: 491230428}
-  - component: {fileID: 491230427}
   - component: {fileID: 491230431}
   - component: {fileID: 491230430}
   - component: {fileID: 491230432}
+  - component: {fileID: 491230427}
   m_Layer: 0
   m_Name: ExitFinder
   m_TagString: Untagged
@@ -730,10 +730,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 491230426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5348436, y: 0.26, z: 1.3100326}
+  m_LocalPosition: {x: -0.08, y: 0, z: 1.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424351850}
+  - {fileID: 764219081}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1284,6 +1285,62 @@ Transform:
   m_Father: {fileID: 687879290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &764219080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 764219081}
+  - component: {fileID: 764219083}
+  - component: {fileID: 764219082}
+  m_Layer: 0
+  m_Name: DetectHero
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &764219081
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764219080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00000040979, y: 0, z: -0.00000011921}
+  m_LocalScale: {x: 4.672348, y: 0.5401994, z: 5.5407486}
+  m_Children: []
+  m_Father: {fileID: 491230429}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &764219082
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764219080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &764219083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764219080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc08979862ed8f4ca39493a9d217c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  butterfly: {fileID: 491230426}
+  hero: {fileID: 1383357448}
+  exitTarget: {fileID: 1493750019}
 --- !u!1 &769316448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1886,7 @@ CapsuleCollider:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1383357448}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
@@ -1877,7 +1934,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1383357448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.12, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 566045742}
@@ -2608,8 +2665,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1550399345}
-  - component: {fileID: 1550399346}
   - component: {fileID: 1550399347}
+  - component: {fileID: 1550399346}
   m_Layer: 0
   m_Name: HeroDetection
   m_TagString: Untagged
@@ -2624,14 +2681,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1550399344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.649, z: 0}
-  m_LocalScale: {x: 3.9997313, y: 3.9997308, z: 3.9997308}
+  m_LocalPosition: {x: 0.00006118, y: 0.649, z: 0}
+  m_LocalScale: {x: 2.4113781, y: 0.69162995, z: 4.8225474}
   m_Children: []
   m_Father: {fileID: 1492364640}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1550399346
-SphereCollider:
+--- !u!65 &1550399346
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -2640,7 +2697,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1550399347
 MonoBehaviour:

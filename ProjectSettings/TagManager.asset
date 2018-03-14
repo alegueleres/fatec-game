@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Obstacles
   - Hero
+  - Enemy
   layers:
   - Default
   - TransparentFX
