@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - Ground
   - Obstacles
+  - Hero
   layers:
   - Default
   - TransparentFX
