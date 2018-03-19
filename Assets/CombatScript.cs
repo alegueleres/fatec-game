@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatScript : MonoBehaviour {
 
@@ -12,7 +13,11 @@ public class CombatScript : MonoBehaviour {
 
     public GameObject enemy;
 
-    public int heroLife = 10;
+    public Sprite[] heroLifeSprites;
+
+    public Image heartUI;
+
+    private int heroLife = 5;
 
     public int enemyLife = 20;
 
@@ -42,7 +47,7 @@ public class CombatScript : MonoBehaviour {
     public void removeHeroLife(int value)
     {
         heroLife = heroLife - value;
-        Debug.Log("hero life: " + heroLife);
+        heartUI.sprite = heroLifeSprites[heroLife];
 
         if (heroLife <= 0)
         {

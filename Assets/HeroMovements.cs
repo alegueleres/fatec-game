@@ -81,7 +81,7 @@ public class HeroMovements : MonoBehaviour {
        return animator.GetBool("Attack");
     }
 
-    private bool verifyIfBlocking()
+    public static bool verifyIfBlocking()
     {
         return animator.GetBool("Block");
     }

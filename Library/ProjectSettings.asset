@@ -6,12 +6,12 @@ PlayerSettings:
   serializedVersion: 12
   productGUID: 7b75b16564037d245b7ba9d7230699b4
   AndroidProfiler: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 2
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: New Unity Project
+  companyName: "Al\xEA Gueleres"
+  productName: Maze And Go
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -141,8 +141,8 @@ PlayerSettings:
   targetPixelDensity: 0
   resolutionScalingMode: 0
   applicationIdentifier:
-    Android: com.Company.ProductName
-    Standalone: unity.DefaultCompany.New Unity Project
+    Android: com.alegueleres.MazeAndGo
+    Standalone: unity.alegueleres.Maze And Go
     Tizen: com.Company.ProductName
     iOS: com.Company.ProductName
     tvOS: com.Company.ProductName
@@ -237,7 +237,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 2045fff1cb68a4b98945234eef7228c0, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
