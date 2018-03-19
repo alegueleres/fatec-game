@@ -31,6 +31,7 @@ public class CombatScript : MonoBehaviour {
 
     public void removeEnemyLife(int value)
     {
+        GameLevelManager.addScore(5);
         enemyLife = enemyLife - value;
         Debug.Log("enemy life: " + enemyLife);
 
@@ -46,6 +47,7 @@ public class CombatScript : MonoBehaviour {
 
     public void removeHeroLife(int value)
     {
+        GameLevelManager.removeScore(10);
         heroLife = heroLife - value;
         heartUI.sprite = heroLifeSprites[heroLife];
 
@@ -53,6 +55,7 @@ public class CombatScript : MonoBehaviour {
         {
             heroAnimator.SetBool("Died", true);
             enemyAnimator.SetBool("win", true);
+            GameLevelManager.setGameOver(true);
         }
         else
         {

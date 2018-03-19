@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeroMovements : MonoBehaviour {
 
@@ -66,6 +67,15 @@ public class HeroMovements : MonoBehaviour {
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Exit")
+        {
+            animator.SetTrigger("Win");
+            Invoke("restartLevel", 2);
+        }
+    }
+
     private void moveVertical(float speed)
     {
         transform.Translate(0, 0, speed);
@@ -84,5 +94,10 @@ public class HeroMovements : MonoBehaviour {
     public static bool verifyIfBlocking()
     {
         return animator.GetBool("Block");
+    }
+
+    private void restartLevel()
+    {
+        SceneManager.LoadScene("Maze");
     }
 }

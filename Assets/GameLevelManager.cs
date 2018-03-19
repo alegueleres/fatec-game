@@ -7,13 +7,9 @@ public class GameLevelManager : MonoBehaviour {
 
     private static int score;
     public Text text;
-    public bool isGameOver = false;
+    public Text gameOverText;
+    private static bool isGameOver = false;
     private bool scanPath = true;
-
-    void Start()
-    {
-        StartCoroutine(updateScoreManager(1f, 1));
-    }
 
     void Update()
     {
@@ -23,20 +19,26 @@ public class GameLevelManager : MonoBehaviour {
             scanPath = false;
         }
         text.text = "Pontuação: " + score.ToString();
-    }
 
-    IEnumerator updateScoreManager(float totalTime, int amount)
-    {
-        while (!isGameOver)
+        if (isGameOver)
         {
-            addScore(amount);
-            yield return new WaitForSeconds(1);
+            gameOverText.text = "Você perdeu. \nPontuação: " + score.ToString();
         }
     }
 
     public static void addScore(int amount)
     {
         score += amount;
+    }
+
+    public static void removeScore(int amount)
+    {
+        score -= amount;
+    }
+
+    public static void setGameOver(bool gameOver)
+    {
+        isGameOver = gameOver;
     }
 
 }
