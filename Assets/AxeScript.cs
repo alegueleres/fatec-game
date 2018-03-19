@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class AxeScript : MonoBehaviour {
 
+    private Animator heroAnimator;
+
     public CombatScript combatScript;
 
+    public GameObject hero;
+
     private bool invincible;
+
+    void Start()
+    {
+        heroAnimator = hero.GetComponent<Animator>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -15,6 +24,10 @@ public class AxeScript : MonoBehaviour {
             combatScript.removeHeroLife(1);
             invincible = true;
             Invoke("resetInvulnerability", 1);
+        }
+        if(other.tag == "Hero" && HeroMovements.verifyIfBlocking())
+        {
+            heroAnimator.SetTrigger(Animator.StringToHash("Blocked"));
         }
     }
 
