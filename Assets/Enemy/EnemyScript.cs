@@ -19,13 +19,10 @@ public class EnemyScript : MonoBehaviour {
             if (animator.GetBool("enemyDied") || animator.GetBool("win"))
             {
                 canMove(false);
-            }
-
-            if (animator.GetBool("enemyAttack") || animator.GetBool("Hurt"))
+            } else if (animator.GetBool("enemyAttack") || animator.GetBool("Hurt"))
             {
                 canMove(false);
-            }
-            else
+            } else
             {
                 canMove(true);
             }

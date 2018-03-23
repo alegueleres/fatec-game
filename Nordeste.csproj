@@ -101,6 +101,7 @@
     <Compile Include="Assets\FollowCamera.cs" />
     <Compile Include="Assets\GameLevelManager.cs" />
     <Compile Include="Assets\HeroMovements.cs" />
+    <Compile Include="Assets\HeroSoundScript.cs" />
     <Compile Include="Assets\IgnoreCollisionScript.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\BasicMazeGenerator.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\DivisionMazeGenerator.cs" />
