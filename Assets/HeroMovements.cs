@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class HeroMovements : MonoBehaviour {
 
@@ -22,27 +23,27 @@ public class HeroMovements : MonoBehaviour {
 	void Update () {
         if (!animator.GetBool("Died"))
         {
-            if (Input.GetAxis("Vertical") > 0 && !verifyIfAttack() && !verifyIfBlocking())
+            if (CrossPlatformInputManager.GetAxis("Vertical") > 0 && !verifyIfAttack() && !verifyIfBlocking())
             {
                 animator.SetBool("Run", true);
-                moveVertical(Input.GetAxis("Vertical") * Time.deltaTime * runSpeed);
+                moveVertical(CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * runSpeed);
             }
             else
             {
                 animator.SetBool("Run", false);
             }
 
-            if (Input.GetAxis("Vertical") < 0 && !verifyIfAttack() && !verifyIfBlocking())
+            if (CrossPlatformInputManager.GetAxis("Vertical") < 0 && !verifyIfAttack() && !verifyIfBlocking())
             {
                 animator.SetBool("Back", true);
-                moveVertical(Input.GetAxis("Vertical") * Time.deltaTime * backSpeed);
+                moveVertical(CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * backSpeed);
             }
             else
             {
                 animator.SetBool("Back", false);
             }
 
-            if (Input.GetButton("Fire1"))
+            if (CrossPlatformInputManager.GetButton("Attack"))
             {
                 animator.SetBool("Attack", true);
             }
@@ -51,7 +52,7 @@ public class HeroMovements : MonoBehaviour {
                 animator.SetBool("Attack", false);
             }
 
-            if (Input.GetButton("Fire2"))
+            if (CrossPlatformInputManager.GetButton("Block"))
             {
                 animator.SetBool("Block", true);
             }
@@ -62,7 +63,7 @@ public class HeroMovements : MonoBehaviour {
 
             if (!verifyIfAttack() && !verifyIfBlocking())
             {
-                moveHorizontal(Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+                moveHorizontal(CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
             }
         }
     }

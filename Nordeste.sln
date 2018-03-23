@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nordeste.Plugins", "Nordest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nordeste.Editor", "Nordeste.Editor.csproj", "{E11F1D32-A076-C4BC-6337-0B4EF3D7BEBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nordeste.Editor.Plugins", "Nordeste.Editor.Plugins.csproj", "{0B8EFC70-A2F5-D246-1AB0-58F697AE8063}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{E11F1D32-A076-C4BC-6337-0B4EF3D7BEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E11F1D32-A076-C4BC-6337-0B4EF3D7BEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E11F1D32-A076-C4BC-6337-0B4EF3D7BEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B8EFC70-A2F5-D246-1AB0-58F697AE8063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B8EFC70-A2F5-D246-1AB0-58F697AE8063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B8EFC70-A2F5-D246-1AB0-58F697AE8063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B8EFC70-A2F5-D246-1AB0-58F697AE8063}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
