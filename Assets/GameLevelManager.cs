@@ -28,12 +28,18 @@ public class GameLevelManager : MonoBehaviour {
 
     public static void addScore(int amount)
     {
-        score += amount;
+        if (!isGameOver)
+        {
+            score += amount;
+        }
     }
 
     public static void removeScore(int amount)
     {
-        score -= amount;
+        if (!isGameOver)
+        {
+            score -= amount;
+        }
     }
 
     public static void setGameOver(bool gameOver)

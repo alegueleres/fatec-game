@@ -97,6 +97,7 @@
     <Compile Include="Assets\AxeScript.cs" />
     <Compile Include="Assets\CombatScript.cs" />
     <Compile Include="Assets\Enemy\EnemyScript.cs" />
+    <Compile Include="Assets\EnemySoundScript.cs" />
     <Compile Include="Assets\FollowCamera.cs" />
     <Compile Include="Assets\GameLevelManager.cs" />
     <Compile Include="Assets\HeroMovements.cs" />

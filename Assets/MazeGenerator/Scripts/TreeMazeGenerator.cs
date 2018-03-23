@@ -84,7 +84,7 @@ public abstract class TreeMazeGenerator : BasicMazeGenerator {
 				}
 			}
 
-			if(!GetMazeCell(ctv.Row,ctv.Column).IsVisited && movesAvailableCount == 0){
+			if(!GetMazeCell(ctv.Row,ctv.Column).IsVisited && Random.Range(0, 8) == 0){
 				GetMazeCell(ctv.Row,ctv.Column).IsGoal = true;
 			}
 

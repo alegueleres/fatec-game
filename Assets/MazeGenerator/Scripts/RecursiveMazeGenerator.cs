@@ -52,7 +52,7 @@ public class RecursiveMazeGenerator : BasicMazeGenerator {
 				GetMazeCell(row,column).WallBack = true;
 			}
 
-			if(movesAvailableCount == 0 && !GetMazeCell(row,column).IsVisited){
+			if(Random.Range(0, 10) == 0){
 				GetMazeCell(row,column).IsGoal = true;
 			}
 

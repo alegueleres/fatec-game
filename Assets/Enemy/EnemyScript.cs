@@ -21,7 +21,7 @@ public class EnemyScript : MonoBehaviour {
                 canMove(false);
             }
 
-            if (animator.GetBool("enemyAttack"))
+            if (animator.GetBool("enemyAttack") || animator.GetBool("Hurt"))
             {
                 canMove(false);
             }
