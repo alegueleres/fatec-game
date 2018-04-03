@@ -44,6 +44,10 @@ public class CombatScript : MonoBehaviour {
     {
         GameLevelManager.removeScore(10);
         heroLife = heroLife - value;
+        if (heroLife < 0)
+        {
+            heroLife = 0;
+        }
         heartUI.sprite = heroLifeSprites[heroLife];
 
         if (heroLife <= 0)

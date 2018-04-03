@@ -14,6 +14,8 @@ public class HeroMovements : MonoBehaviour {
 
     public float turnSpeed = 150.0f;
 
+    private bool canAttack = true;
+
 	// Use this for initialization
 	void Start () {
         animator = this.GetComponent<Animator>();
@@ -25,11 +27,21 @@ public class HeroMovements : MonoBehaviour {
         {
             if (CrossPlatformInputManager.GetAxis("Vertical") > 0 && !verifyIfAttack() && !verifyIfBlocking())
             {
-                animator.SetBool("Run", true);
+                if (CrossPlatformInputManager.GetAxis("Vertical") < 0.7f)
+                {
+                    animator.SetBool("Run", false);
+                    animator.SetBool("Walk", true);
+                }
+                else
+                {
+                    animator.SetBool("Walk", false);
+                    animator.SetBool("Run", true);
+                }
                 moveVertical(CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime * runSpeed);
             }
             else
             {
+                animator.SetBool("Walk", false);
                 animator.SetBool("Run", false);
             }
 
@@ -45,7 +57,12 @@ public class HeroMovements : MonoBehaviour {
 
             if (CrossPlatformInputManager.GetButton("Attack"))
             {
-                animator.SetBool("Attack", true);
+                if (canAttack)
+                {
+                    animator.SetBool("Attack", true);
+                    canAttack = false;
+                    Invoke("resetAttackBool", 1f);
+                }
             }
             else
             {
@@ -66,6 +83,12 @@ public class HeroMovements : MonoBehaviour {
                 moveHorizontal(CrossPlatformInputManager.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
             }
         }
+    }
+
+    private void resetAttackBool()
+    {
+        CrossPlatformInputManager.SetButtonUp("Attack");
+        canAttack = true;
     }
 
     private void OnCollisionEnter(Collision collision)

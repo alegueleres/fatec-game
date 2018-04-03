@@ -115,7 +115,6 @@
     <Compile Include="Assets\HPParticle\Scripts\ProjectileScript.cs" />
     <Compile Include="Assets\HPParticle\Scripts\ProjectileShooterScript.cs" />
     <Compile Include="Assets\IgnoreCollisionScript.cs" />
-    <Compile Include="Assets\Low Polygon Potions Pack\Other Assets\Scripts\CreatePrefabFromSelected.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\BasicMazeGenerator.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\DivisionMazeGenerator.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\MazeCell.cs" />
