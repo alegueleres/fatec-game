@@ -103,6 +103,17 @@
     <Compile Include="Assets\GameLevelManager.cs" />
     <Compile Include="Assets\HeroMovements.cs" />
     <Compile Include="Assets\HeroSoundScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\AlwaysFace.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\CameraScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\DestroyAfter.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\GUICameraScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\GUIHPParticleScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\GUIProjectileSettingsScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\HPParticleScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\HPScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\PlayerCollisionScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\ProjectileScript.cs" />
+    <Compile Include="Assets\HPParticle\Scripts\ProjectileShooterScript.cs" />
     <Compile Include="Assets\IgnoreCollisionScript.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\BasicMazeGenerator.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\DivisionMazeGenerator.cs" />
@@ -125,6 +136,7 @@
     <Compile Include="Assets\QuitFullApplication.cs" />
     <Compile Include="Assets\ShouldFly.cs" />
     <Compile Include="Assets\SwordScript.cs" />
+    <Compile Include="Assets\ZombiePunchScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\Navmesh.cginc" />

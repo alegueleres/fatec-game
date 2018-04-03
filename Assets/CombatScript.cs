@@ -7,8 +7,6 @@ public class CombatScript : MonoBehaviour {
 
     private Animator heroAnimator;
 
-    private Animator enemyAnimator;
-
     public GameObject hero;
 
     public Sprite[] heroLifeSprites;
@@ -31,7 +29,6 @@ public class CombatScript : MonoBehaviour {
         GameLevelManager.addScore(5);
         EnemyLifeScript enemyLifeScript = (EnemyLifeScript )enemy.GetComponent(typeof(EnemyLifeScript));
         enemyLife = enemyLifeScript.removeCurrentLife(value);
-        Debug.Log("enemy life: " + enemyLife);
 
         if (enemyLife <= 0)
         {
@@ -43,7 +40,7 @@ public class CombatScript : MonoBehaviour {
         }
     }
 
-    public void removeHeroLife(int value)
+    public void removeHeroLife(int value, GameObject enemy)
     {
         GameLevelManager.removeScore(10);
         heroLife = heroLife - value;
@@ -52,7 +49,7 @@ public class CombatScript : MonoBehaviour {
         if (heroLife <= 0)
         {
             heroAnimator.SetBool("Died", true);
-            enemyAnimator.SetBool("win", true);
+            enemy.GetComponent<Animator>().SetBool("win", true);
             GameLevelManager.setGameOver(true);
         }
         else

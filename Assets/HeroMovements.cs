@@ -97,8 +97,13 @@ public class HeroMovements : MonoBehaviour {
         return animator.GetBool("Block");
     }
 
+    public static bool verifyIfDied()
+    {
+        return animator.GetBool("Died");
+    }
+
     private void restartLevel()
     {
-        SceneManager.LoadScene("Maze");
+        SceneManager.LoadScene("Maze1");
     }
 }

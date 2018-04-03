@@ -23,7 +23,7 @@ public class AxeScript : MonoBehaviour {
     {
         if (enemy.GetComponent<Animator>().GetBool("enemyAttack") && !enemy.GetComponent<Animator>().GetBool("enemyDied") && other.tag == "Hero" && !HeroMovements.verifyIfBlocking() && !invincible)
         {
-            combatScript.removeHeroLife(1);
+            combatScript.removeHeroLife(2, enemy);
             invincible = true;
             Invoke("resetInvulnerability", 2);
         }

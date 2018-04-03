@@ -12,14 +12,21 @@ public class SwordScript : MonoBehaviour {
     {
         if (HeroMovements.verifyIfAttack() && other.tag == "Enemy" && !invincible)
         {
-            combatScript.removeEnemyLife(2, other.gameObject);
+            combatScript.removeEnemyLife(getDamage(), other.gameObject);
+            PlayerCollisionScript.updateEnemyHP(other.gameObject, transform.position);
             invincible = true;
-            Invoke("resetEnemyInvulnerability", 2);
+            Invoke("resetEnemyInvulnerability", 1.5f);
         }
+
     }
 
     private void resetEnemyInvulnerability()
     {
         invincible = false;
+    }
+
+    public static int getDamage()
+    {
+        return 2;
     }
 }
