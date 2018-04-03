@@ -15,7 +15,6 @@ public class MazeSpawner : MonoBehaviour {
 
 	public MazeGenerationAlgorithm Algorithm = MazeGenerationAlgorithm.PureRecursive;
 	public bool FullRandom = false;
-	public int RandomSeed = 12345;
 	public GameObject Floor = null;
 	public GameObject Wall = null;
 	public GameObject Pillar = null;
@@ -30,7 +29,7 @@ public class MazeSpawner : MonoBehaviour {
 
 	void Start () {
 		if (!FullRandom) {
-			Random.seed = RandomSeed;
+			Random.seed = Random.Range(0, 2000);
 		}
 		switch (Algorithm) {
 		case MazeGenerationAlgorithm.PureRecursive:

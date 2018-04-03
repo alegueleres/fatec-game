@@ -52,7 +52,7 @@ public class HeroMovements : MonoBehaviour {
                 animator.SetBool("Attack", false);
             }
 
-            if (CrossPlatformInputManager.GetButton("Block"))
+            if (CrossPlatformInputManager.GetButton("Block") )
             {
                 animator.SetBool("Block", true);
             }

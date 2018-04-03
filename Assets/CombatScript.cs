@@ -11,8 +11,6 @@ public class CombatScript : MonoBehaviour {
 
     public GameObject hero;
 
-    public GameObject enemy;
-
     public Sprite[] heroLifeSprites;
 
     public Image heartUI;
@@ -26,22 +24,22 @@ public class CombatScript : MonoBehaviour {
 	// Update is called once per frame
 	void Start () {
         heroAnimator = hero.GetComponent<Animator>();
-        enemyAnimator = enemy.GetComponent<Animator>();
     }
 
-    public void removeEnemyLife(int value)
+    public void removeEnemyLife(int value, GameObject enemy)
     {
         GameLevelManager.addScore(5);
-        enemyLife = enemyLife - value;
+        EnemyLifeScript enemyLifeScript = (EnemyLifeScript )enemy.GetComponent(typeof(EnemyLifeScript));
+        enemyLife = enemyLifeScript.removeCurrentLife(value);
         Debug.Log("enemy life: " + enemyLife);
 
         if (enemyLife <= 0)
         {
-            enemyAnimator.SetBool("enemyDied", true);
+            enemy.GetComponent<Animator>().SetBool("enemyDied", true);
         }
         else
         {
-            enemyAnimator.SetTrigger(Animator.StringToHash("Hurt"));
+            enemy.GetComponent<Animator>().SetTrigger(Animator.StringToHash("Hurt"));
         }
     }
 

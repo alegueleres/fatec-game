@@ -10,6 +10,8 @@ public class AxeScript : MonoBehaviour {
 
     public GameObject hero;
 
+    public GameObject enemy;
+
     private bool invincible;
 
     void Start()
@@ -19,11 +21,11 @@ public class AxeScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (EnemyScript.verifyAttack() && !EnemyScript.verifyDie() && other.tag == "Hero" && !HeroMovements.verifyIfBlocking() && !invincible)
+        if (enemy.GetComponent<Animator>().GetBool("enemyAttack") && !enemy.GetComponent<Animator>().GetBool("enemyDied") && other.tag == "Hero" && !HeroMovements.verifyIfBlocking() && !invincible)
         {
             combatScript.removeHeroLife(1);
             invincible = true;
-            Invoke("resetInvulnerability", 1);
+            Invoke("resetInvulnerability", 2);
         }
         if(other.tag == "Hero" && HeroMovements.verifyIfBlocking())
         {
