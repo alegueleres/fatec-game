@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 //<summary>
 //Game object, that creates maze and instantiates it in scene
@@ -24,6 +25,7 @@ public class MazeSpawner : MonoBehaviour {
 	public float CellHeight = 5;
 	public bool AddGaps = true;
 	public GameObject GoalPrefab = null;
+    public List<GameObject> PotionPrefabs = null;
 
 	private BasicMazeGenerator mMazeGenerator = null;
 
@@ -74,7 +76,14 @@ public class MazeSpawner : MonoBehaviour {
 					tmp.transform.parent = transform;
 				}
 				if(cell.IsGoal && GoalPrefab != null){
-					tmp = Instantiate(GoalPrefab,new Vector3(x,1,z), Quaternion.Euler(0,0,0)) as GameObject;
+                    if (Random.Range(0, 4) == 0)
+                    {
+                        tmp = Instantiate(PotionPrefabs[Random.Range(0,2)], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+                    }
+                    else
+                    {
+                        tmp = Instantiate(GoalPrefab, new Vector3(x, 1, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+                    }
 					tmp.transform.parent = transform;
 				}
 			}

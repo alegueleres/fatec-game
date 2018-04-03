@@ -115,6 +115,7 @@
     <Compile Include="Assets\HPParticle\Scripts\ProjectileScript.cs" />
     <Compile Include="Assets\HPParticle\Scripts\ProjectileShooterScript.cs" />
     <Compile Include="Assets\IgnoreCollisionScript.cs" />
+    <Compile Include="Assets\Low Polygon Potions Pack\Other Assets\Scripts\CreatePrefabFromSelected.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\BasicMazeGenerator.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\DivisionMazeGenerator.cs" />
     <Compile Include="Assets\MazeGenerator\Scripts\MazeCell.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Assets\Menu\Scripts\SetAudioLevels.cs" />
     <Compile Include="Assets\Menu\Scripts\ShowPanels.cs" />
     <Compile Include="Assets\Menu\Scripts\StartOptions.cs" />
+    <Compile Include="Assets\PotionScript.cs" />
     <Compile Include="Assets\QuitFullApplication.cs" />
     <Compile Include="Assets\ShouldFly.cs" />
     <Compile Include="Assets\SwordScript.cs" />
@@ -144,6 +146,7 @@
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
     <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
     <None Include="Assets\Cartoon lowpoly water well\readme.txt" />
+    <None Include="Assets\Low Polygon Potions Pack\Readme.txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\Neverwinter.txt" />
     <None Include="Assets\Menu\GameJamTemplateReadMe.txt" />

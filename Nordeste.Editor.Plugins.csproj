@@ -156,6 +156,7 @@
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
     <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
     <None Include="Assets\Cartoon lowpoly water well\readme.txt" />
+    <None Include="Assets\Low Polygon Potions Pack\Readme.txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\Neverwinter.txt" />
     <None Include="Assets\Menu\GameJamTemplateReadMe.txt" />

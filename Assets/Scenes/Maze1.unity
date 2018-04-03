@@ -1257,6 +1257,10 @@ MonoBehaviour:
   CellHeight: 3
   AddGaps: 0
   GoalPrefab: {fileID: 159624, guid: 850205124263c924ea0aa82f0fdf2673, type: 2}
+  PotionPrefabs:
+  - {fileID: 1750160824247694, guid: 518ccb3562579ca4995d9fb8ae04c23f, type: 2}
+  - {fileID: 1138862645697298, guid: bb53ac25f873509439b2053beb295cf3, type: 2}
+  - {fileID: 1302078274878638, guid: a5adb53f835b1544f9f6c9e165877a09, type: 2}
 --- !u!1 &987439712 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 9529ecc3d479da5499993355e6c2cb4f, type: 2}

@@ -57,4 +57,18 @@ public class CombatScript : MonoBehaviour {
             heroAnimator.SetTrigger(Animator.StringToHash("Hurt"));
         }
     }
+
+    public void addHeroLife(int value)
+    {
+        if (heroLife < 5)
+        {
+            heroLife += value;
+            heartUI.sprite = heroLifeSprites[heroLife];
+        }
+    }
+
+    public int getHeroLife()
+    {
+        return heroLife;
+    }
 }
