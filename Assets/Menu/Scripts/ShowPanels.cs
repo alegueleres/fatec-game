@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class ShowPanels : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject pausePanel;							//Store a reference to the Game Object PausePanel
     public GameObject creditsPanel;                         //Store a reference to the Game Object CreditsPanel
     public GameObject creditsTint;							//Store a reference to the Game Object CreditsTint 
+    public AudioMixer audioMixer;
 
 
     //Call this function to activate and display the Options panel during the main menu
@@ -17,7 +19,16 @@ public class ShowPanels : MonoBehaviour {
 		optionsPanel.SetActive(true);
 		optionsTint.SetActive(true);
         optionsPanel.transform.Find("CreditsBack").gameObject.SetActive(false);
-        optionsPanel.transform.Find("OptionsMusicOff").gameObject.SetActive(false);
+        if (GetMusicLevel() == -80f)
+        {
+            optionsPanel.transform.Find("OptionsMusicOff").gameObject.SetActive(true);
+            optionsPanel.transform.Find("OptionsMusicOn").gameObject.SetActive(false);
+        }
+        else
+        {
+            optionsPanel.transform.Find("OptionsMusicOff").gameObject.SetActive(false);
+            optionsPanel.transform.Find("OptionsMusicOn").gameObject.SetActive(true);
+        }
     }
 
 	//Call this function to deactivate and hide the Options panel during the main menu
@@ -62,7 +73,15 @@ public class ShowPanels : MonoBehaviour {
 	{
 		pausePanel.SetActive (true);
 		optionsTint.SetActive(true);
-        pausePanel.transform.Find("OptionsMusicOff").gameObject.SetActive(false);
+        if (GetMusicLevel() == -80f)
+        {
+            pausePanel.transform.Find("OptionsMusicOff").gameObject.SetActive(true);
+            pausePanel.transform.Find("OptionsMusicOn").gameObject.SetActive(false);
+        } else
+        {
+            pausePanel.transform.Find("OptionsMusicOff").gameObject.SetActive(false);
+            pausePanel.transform.Find("OptionsMusicOn").gameObject.SetActive(true);
+        }
     }
 
 	//Call this function to deactivate and hide the Pause panel during game play
@@ -71,4 +90,18 @@ public class ShowPanels : MonoBehaviour {
 		pausePanel.SetActive (false);
 		optionsTint.SetActive(false);
 	}
+
+    public float GetMusicLevel()
+    {
+        float value = -80f;
+        bool result = audioMixer.GetFloat("musicVol", out value);
+        if (result)
+        {
+            return value;
+        }
+        else
+        {
+            return -25f;
+        }
+    }
 }

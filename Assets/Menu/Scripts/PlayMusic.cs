@@ -88,12 +88,14 @@ public class PlayMusic : MonoBehaviour {
     public void DeactivateMusic()
     {
         audioMixer.SetFloat("musicVol", -80);
+        StopMusic();
         ShowMusicOffIcon();
     }
 
     public void ActivateMusic()
     {
         audioMixer.SetFloat("musicVol", -25);
+        musicSource.Play();
         ShowMusicOnIcon();
     }
 

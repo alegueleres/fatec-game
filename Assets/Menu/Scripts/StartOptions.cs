@@ -15,9 +15,10 @@ public class StartOptions : MonoBehaviour {
     public GameObject loadingScreen;
     public Slider loadSlider;
     public Text loadProgressText;
+    public Text waitText;
 
 
-	[HideInInspector] public bool inMainMenu = true;					//If true, pause button disabled in main menu (Cancel in input manager, default escape key)
+    [HideInInspector] public bool inMainMenu = true;					//If true, pause button disabled in main menu (Cancel in input manager, default escape key)
 	public Animator animColorFade; 					//Reference to animator which will fade to and from black when starting game.
 	[HideInInspector] public Animator animMenuAlpha;					//Reference to animator that will fade out alpha of MenuPanel canvas group
 	 public AnimationClip fadeColorAnimationClip;		//Animation clip fading to color (black default) when changing scenes
@@ -152,7 +153,7 @@ public class StartOptions : MonoBehaviour {
             loadProgressText.text = System.Math.Round(progress, 2) * 100 + "%";
             if (progress == 1)
             {
-                loadProgressText.text += " - Aperte para começar!";
+                waitText.text = "Aperte para começar!";
                 if( Input.GetButton("Fire1"))
                 {
                     operation.allowSceneActivation = true;
