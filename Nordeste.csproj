@@ -133,9 +133,11 @@
     <Compile Include="Assets\Menu\Scripts\SetAudioLevels.cs" />
     <Compile Include="Assets\Menu\Scripts\ShowPanels.cs" />
     <Compile Include="Assets\Menu\Scripts\StartOptions.cs" />
+    <Compile Include="Assets\PauseButtonScript.cs" />
     <Compile Include="Assets\PotionScript.cs" />
     <Compile Include="Assets\QuitFullApplication.cs" />
     <Compile Include="Assets\ShouldFly.cs" />
+    <Compile Include="Assets\Simple Vector Icons\Sample\IconPreview.cs" />
     <Compile Include="Assets\SwordScript.cs" />
     <Compile Include="Assets\ZombiePunchScript.cs" />
   </ItemGroup>

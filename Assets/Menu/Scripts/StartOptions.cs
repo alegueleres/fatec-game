@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -11,6 +12,9 @@ public class StartOptions : MonoBehaviour {
 	public int sceneToStart = 1;										//Index number in build settings of scene to load if changeScenes is true
 	public bool changeScenes;											//If true, load a new scene when Start is pressed, if false, fade out UI and continue in single scene
 	public bool changeMusicOnStart;										//Choose whether to continue playing menu music or start a new music clip
+    public GameObject loadingScreen;
+    public Slider loadSlider;
+    public Text loadProgressText;
 
 
 	[HideInInspector] public bool inMainMenu = true;					//If true, pause button disabled in main menu (Cancel in input manager, default escape key)
@@ -32,6 +36,7 @@ public class StartOptions : MonoBehaviour {
 
 		//Get a reference to PlayMusic attached to UI object
 		playMusic = GetComponent<PlayMusic> ();
+        loadingScreen.SetActive(false);
 	}
 
 
@@ -51,7 +56,7 @@ public class StartOptions : MonoBehaviour {
 			Invoke ("LoadDelayed", fadeColorAnimationClip.length * .5f);
 
 			//Set the trigger of Animator animColorFade to start transition to the FadeToOpaque state.
-			animColorFade.SetTrigger ("fade");
+			//animColorFade.SetTrigger ("fade");
 		} 
 
 		//If changeScenes is false, call StartGameInScene
@@ -76,12 +81,11 @@ public class StartOptions : MonoBehaviour {
     //Once the level has loaded, check if we want to call PlayLevelMusic
     void SceneWasLoaded(Scene scene, LoadSceneMode mode)
     {
-		//if changeMusicOnStart is true, call the PlayLevelMusic function of playMusic
-		if (changeMusicOnStart)
-		{
-			playMusic.PlayLevelMusic ();
-		}	
-	}
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            playMusic.PlaySelectedMusic(0);
+        }
+    }
 
 
 	public void LoadDelayed()
@@ -91,9 +95,14 @@ public class StartOptions : MonoBehaviour {
 
 		//Hide the main menu UI element
 		showPanels.HideMenu ();
+        if (changeMusicOnStart)
+        {
+            PlayNewMusic();
+        }
 
-		//Load the selected scene, by scene index number in build settings
-		SceneManager.LoadScene (sceneToStart);
+        //Load the selected scene, by scene index number in build settings
+        StartCoroutine(LoadAsynchronously(sceneToStart));
+		//SceneManager.LoadScene (sceneToStart);
 	}
 
 	public void HideDelayed()
@@ -128,4 +137,33 @@ public class StartOptions : MonoBehaviour {
 		//Play music clip assigned to mainMusic in PlayMusic script
 		playMusic.PlaySelectedMusic (1);
 	}
+
+    IEnumerator LoadAsynchronously(int sceneIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        operation.allowSceneActivation = false;
+
+        loadingScreen.SetActive(true);
+
+        while(!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            loadSlider.value = progress;
+            loadProgressText.text = System.Math.Round(progress, 2) * 100 + "%";
+            if (progress == 1)
+            {
+                loadProgressText.text += " - Aperte para começar!";
+                if( Input.GetButton("Fire1"))
+                {
+                    operation.allowSceneActivation = true;
+                }
+            }
+            yield return null;
+        }
+
+        if(operation.isDone)
+        {
+            loadingScreen.SetActive(false);
+        }
+    }
 }

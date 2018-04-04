@@ -139,7 +139,7 @@ e69a65ea0f87dddf901476703b12b073 Assembly-CSharp.dll:.ZombiePunchScript
 a2efb0db652b8114d1ae7dd9a600d626 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.InputAxisScrollbar
 ce1c068de166ec4b92c2d29768bb6b1a Assembly-CSharp.dll:.GUIHPParticleScript
 fe76270bd84ec3b6f2f6f92c69cf69da Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.AxisTouchButton
-8b238b37ee9a9a68f1548716f357c47b Assembly-CSharp.dll:.StartOptions
+c3036d11f910d5f04a0ec31cc6a82cbc Assembly-CSharp.dll:.StartOptions
 36b20e59d90b43844854cf869b5cc223 Assembly-CSharp.dll:.MazeScript
 a7d3c6c6948d99dd4116e659ddcf5ac4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.ButtonHandler
 4d146f8d27f4cda497b4c9680b56ad91 Assembly-CSharp.dll:.GUICameraScript
@@ -200,3 +200,5 @@ fba4291b107447b6f0c999a7a60f57de Assembly-CSharp.dll:.ProjectileScript
 f0810e56bffa47f753e9a8b346f81433 Assembly-CSharp.dll:.CameraScript
 65cfabd9f6a19ddff4cdebe406f136a3 Assembly-CSharp.dll:.IgnoreCollisionScript
 9efc5a36a1a2485d87448c639e1193d8 Assembly-CSharp.dll:.AlwaysFace
+245c6cab5053cbc78fb81987def6dd41 Assembly-CSharp.dll:.PauseButtonScript
+76e06ba249210c5086ddfccdba52b57c Assembly-CSharp.dll:.IconPreview

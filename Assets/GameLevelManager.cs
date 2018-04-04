@@ -54,4 +54,9 @@ public class GameLevelManager : MonoBehaviour {
         isGameOver = gameOver;
     }
 
+    public static void resetScore()
+    {
+        score = 0;
+    }
+
 }

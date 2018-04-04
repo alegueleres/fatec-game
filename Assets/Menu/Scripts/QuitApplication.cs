@@ -6,6 +6,9 @@ public class QuitApplication : MonoBehaviour {
 
 	public void Quit()
 	{
+        GameLevelManager.resetScore();
+        CombatScript.resetHeroLife();
+        PlayMusic.StopMusic();
         SceneManager.LoadScene("MainMenu");
         Pause.UnPause();
 	}

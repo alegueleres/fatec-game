@@ -13,7 +13,7 @@ public class CombatScript : MonoBehaviour {
 
     public Image heartUI;
 
-    private int heroLife = 5;
+    private static int heroLife = 5;
 
     public int enemyLife = 20;
 
@@ -74,5 +74,10 @@ public class CombatScript : MonoBehaviour {
     public int getHeroLife()
     {
         return heroLife;
+    }
+
+    public static void resetHeroLife()
+    {
+        heroLife = 5;
     }
 }

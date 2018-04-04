@@ -10,9 +10,11 @@ public class PlayMusic : MonoBehaviour {
 	public AudioClip mainMusic;						//Assign Audioclip for main 
 	public AudioMixerSnapshot volumeDown;			//Reference to Audio mixer snapshot in which the master volume of main mixer is turned down
 	public AudioMixerSnapshot volumeUp;				//Reference to Audio mixer snapshot in which the master volume of main mixer is turned up
+    public AudioMixer audioMixer;
+    public GameObject optionsPanel;
+    public GameObject pausePanel;
 
-
-	private AudioSource musicSource;				//Reference to the AudioSource which plays music
+    private static AudioSource musicSource;				//Reference to the AudioSource which plays music
 	private float resetTime = .01f;					//Very short time used to fade in near instantly without a click
 
 
@@ -77,4 +79,37 @@ public class PlayMusic : MonoBehaviour {
 		//call the TransitionTo function of the audioMixerSnapshot volumeDown;
 		volumeDown.TransitionTo (fadeTime);
 	}
+
+    public static void StopMusic()
+    {
+        musicSource.Stop();
+    }
+
+    public void DeactivateMusic()
+    {
+        audioMixer.SetFloat("musicVol", -80);
+        ShowMusicOffIcon();
+    }
+
+    public void ActivateMusic()
+    {
+        audioMixer.SetFloat("musicVol", -25);
+        ShowMusicOnIcon();
+    }
+
+    public void ShowMusicOffIcon()
+    {
+        optionsPanel.transform.Find("OptionsMusicOn").gameObject.SetActive(false);
+        optionsPanel.transform.Find("OptionsMusicOff").gameObject.SetActive(true);
+        pausePanel.transform.Find("OptionsMusicOn").gameObject.SetActive(false);
+        pausePanel.transform.Find("OptionsMusicOff").gameObject.SetActive(true);
+    }
+
+    public void ShowMusicOnIcon()
+    {
+        optionsPanel.transform.Find("OptionsMusicOn").gameObject.SetActive(true);
+        optionsPanel.transform.Find("OptionsMusicOff").gameObject.SetActive(false);
+        pausePanel.transform.Find("OptionsMusicOn").gameObject.SetActive(true);
+        pausePanel.transform.Find("OptionsMusicOff").gameObject.SetActive(false);
+    }
 }
