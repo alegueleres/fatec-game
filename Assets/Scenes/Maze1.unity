@@ -868,6 +868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1719482949}
   gameOverText: {fileID: 574159391}
+  gameOverMenuAnimator: {fileID: 0}
 --- !u!114 &592782813
 MonoBehaviour:
   m_ObjectHideFlags: 0

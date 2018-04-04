@@ -19,10 +19,17 @@ public class GameLevelManager : MonoBehaviour {
             scanPath = false;
         }
         text.text = "Pontuação: " + score.ToString();
-
         if (isGameOver)
         {
-            gameOverText.text = "Você perdeu. \nPontuação: " + score.ToString();
+            if (score > PlayerPrefs.GetInt("highscore"))
+            {
+                PlayerPrefs.SetInt("highscore", score);
+            }
+            gameOverText.enabled = true;
+            gameOverText.text = "Você perdeu. \nPontuação: " + score.ToString() + ". Sua maior pontuação foi: " + PlayerPrefs.GetInt("highscore");
+        } else
+        {
+            gameOverText.enabled = false;
         }
     }
 
