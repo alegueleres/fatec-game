@@ -26,8 +26,10 @@ public class MazeSpawner : MonoBehaviour {
 	public bool AddGaps = true;
 	public GameObject GoalPrefab = null;
     public List<GameObject> PotionPrefabs = null;
+    public List<GameObject> EnemyPrefabs = null;
+    public Transform hero = null;
 
-	private BasicMazeGenerator mMazeGenerator = null;
+    private BasicMazeGenerator mMazeGenerator = null;
 
 	void Start () {
 		if (!FullRandom) {
@@ -51,8 +53,13 @@ public class MazeSpawner : MonoBehaviour {
 			break;
 		}
 		mMazeGenerator.GenerateMaze ();
+        int countSpawn = 0;
+        int zombieCount = 0;
+        int bruteCount = 0;
+        int minionCount = 0;
 		for (int row = 0; row < Rows; row++) {
 			for(int column = 0; column < Columns; column++){
+                countSpawn++;
 				float x = column*(CellWidth+(AddGaps?.2f:0));
 				float z = row*(CellHeight+(AddGaps?.2f:0));
 				MazeCell cell = mMazeGenerator.GetMazeCell(row,column);
@@ -76,18 +83,48 @@ public class MazeSpawner : MonoBehaviour {
 					tmp.transform.parent = transform;
 				}
 				if(cell.IsGoal && GoalPrefab != null){
+                    int enemySpawner = Random.Range(0, 13);
                     if (Random.Range(0, 4) == 0)
                     {
                         tmp = Instantiate(PotionPrefabs[Random.Range(0,2)], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+                    }
+                    else if (enemySpawner < 4 && countSpawn > 30)
+                    {
+                        tmp = Instantiate(EnemyPrefabs[2], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
+                        tmp.GetComponent<AIPath>().target = hero;
+                        minionCount++;
+                    }
+                    else if (enemySpawner < 6 && countSpawn > 300)
+                    {
+                        tmp = Instantiate(EnemyPrefabs[1], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
+                        tmp.GetComponent<AIPath>().target = hero;
+                        zombieCount++;
+                    }
+                    else if (enemySpawner < 7 && countSpawn > 700)
+                    {
+                        tmp = Instantiate(EnemyPrefabs[0], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
+                        tmp.GetComponent<AIPath>().target = hero;
+                        bruteCount++;
                     }
                     else
                     {
                         tmp = Instantiate(GoalPrefab, new Vector3(x, 1, z), Quaternion.Euler(0, 0, 0)) as GameObject;
                     }
-					tmp.transform.parent = transform;
+                    
+                    tmp.transform.parent = transform;
 				}
+                if(countSpawn == 900)
+                {
+                    tmp = Instantiate(EnemyPrefabs[Random.Range(0, 2)], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
+                    tmp.GetComponent<AIPath>().target = hero;
+                    bruteCount++;
+                }
 			}
 		}
+        Debug.Log("Minions: " + minionCount);
+        Debug.Log("Zombies: " + zombieCount);
+        Debug.Log("Brute: " + bruteCount);
+        Debug.Log("Total Enemies: " + (minionCount + zombieCount + bruteCount));
 		if(Pillar != null){
 			for (int row = 0; row < Rows+1; row++) {
 				for (int column = 0; column < Columns+1; column++) {

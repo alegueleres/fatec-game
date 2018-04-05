@@ -15,7 +15,7 @@ public class SwordScript : MonoBehaviour {
             combatScript.removeEnemyLife(getDamage(), other.gameObject);
             PlayerCollisionScript.updateEnemyHP(other.gameObject, transform.position);
             invincible = true;
-            Invoke("resetEnemyInvulnerability", 1.5f);
+            Invoke("resetEnemyInvulnerability", 1);
         }
 
     }

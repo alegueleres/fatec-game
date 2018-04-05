@@ -94,7 +94,7 @@ public class PlayMusic : MonoBehaviour {
 
     public void ActivateMusic()
     {
-        audioMixer.SetFloat("musicVol", -25);
+        audioMixer.SetFloat("musicVol", -15);
         musicSource.Play();
         ShowMusicOnIcon();
     }

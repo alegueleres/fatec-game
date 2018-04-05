@@ -16,7 +16,7 @@ public class EnemyScript : MonoBehaviour {
     void Update () {
         if (!animator.GetBool("enemyDied"))
         {
-            if (animator.GetBool("enemyDied") || animator.GetBool("win"))
+            if (animator.GetBool("win") || !animator.GetBool("search"))
             {
                 canMove(false);
             } else if (animator.GetBool("enemyAttack") || animator.GetBool("Hurt"))
@@ -28,7 +28,8 @@ public class EnemyScript : MonoBehaviour {
             }
         } else
         {
-            Invoke("destroyEnemy", 3);
+            canMove(false);
+            Invoke("destroyEnemy", 2.5f);
         }
     }
 
@@ -42,7 +43,10 @@ public class EnemyScript : MonoBehaviour {
 
     void OnTriggerExit(Collider collider)
     {
-        animator.SetBool("enemyAttack", false);
+        if (collider.tag == "Hero")
+        {
+            animator.SetBool("enemyAttack", false);
+        }
     }
 
     private void canMove(bool moveAndSearch)

@@ -1,5 +1,5 @@
 Android
-3d6faa25410cdd7e15223158c2147d72 Assembly-CSharp.dll:.MazeSpawner
+44914da0a0fdef0559fcae4f6abde29b Assembly-CSharp.dll:.MazeSpawner
 790605e19831ace4cf8ae25a9753e510 Assembly-CSharp-firstpass.dll:.ProceduralGridMover
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -131,11 +131,11 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
-e69a65ea0f87dddf901476703b12b073 Assembly-CSharp.dll:.AxeScript
+73659c425f242c138b450ba4872c63aa Assembly-CSharp.dll:.AxeScript
 78ebae5ed9b3edeb216da437b99754a4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.Joystick
 1fcc79f03471669343f330a98d9aa3ff Assembly-CSharp.dll:.GUIProjectileSettingsScript
 ad0f126fcba09821bc39d20a791e1921 Assembly-CSharp-firstpass.dll:Pathfinding.NodeLink2
-e69a65ea0f87dddf901476703b12b073 Assembly-CSharp.dll:.ZombiePunchScript
+73659c425f242c138b450ba4872c63aa Assembly-CSharp.dll:.ZombiePunchScript
 80c7d766024f6708f2721919bd4a59c2 Assembly-CSharp-firstpass.dll:.AstarPath
 a2efb0db652b8114d1ae7dd9a600d626 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.InputAxisScrollbar
 ce1c068de166ec4b92c2d29768bb6b1a Assembly-CSharp.dll:.GUIHPParticleScript
@@ -202,3 +202,4 @@ fba4291b107447b6f0c999a7a60f57de Assembly-CSharp.dll:.ProjectileScript
 f0810e56bffa47f753e9a8b346f81433 Assembly-CSharp.dll:.CameraScript
 65cfabd9f6a19ddff4cdebe406f136a3 Assembly-CSharp.dll:.IgnoreCollisionScript
 9efc5a36a1a2485d87448c639e1193d8 Assembly-CSharp.dll:.AlwaysFace
+73659c425f242c138b450ba4872c63aa Assembly-CSharp.dll:.CanSearchScript

@@ -9,9 +9,12 @@ public class PotionScript : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         CombatScript combatScript = GameObject.Find("EventSystem").GetComponent<CombatScript>();
-        if(other.tag == "Hero" && combatScript.getHeroLife() < 5)
+        if(other.tag == "Hero")
         {
-            combatScript.addHeroLife(1);
+            if (combatScript.getHeroLife() < 5)
+            {
+                combatScript.addHeroLife(1);
+            }
             GameObject.Find("Hero").GetComponent<AudioSource>().PlayOneShot(drink);
             GameLevelManager.addScore(5);
             Destroy(this.gameObject);

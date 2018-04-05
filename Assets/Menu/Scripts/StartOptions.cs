@@ -153,7 +153,7 @@ public class StartOptions : MonoBehaviour {
             loadProgressText.text = System.Math.Round(progress, 2) * 100 + "%";
             if (progress == 1)
             {
-                waitText.text = "Aperte para começar!";
+                waitText.text = "Toque para começar!";
                 if( Input.GetButton("Fire1"))
                 {
                     operation.allowSceneActivation = true;

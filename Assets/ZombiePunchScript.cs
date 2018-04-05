@@ -6,24 +6,20 @@ public class ZombiePunchScript : MonoBehaviour {
 
     private Animator heroAnimator;
 
-    public CombatScript combatScript;
-
-    public GameObject hero;
-
     public GameObject enemy;
 
     private bool invincible;
 
     void Start()
     {
-        heroAnimator = hero.GetComponent<Animator>();
+        heroAnimator = GameObject.Find("Hero").GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (enemy.GetComponent<Animator>().GetBool("enemyAttack") && !enemy.GetComponent<Animator>().GetBool("enemyDied") && other.tag == "Hero" && !HeroMovements.verifyIfBlocking() && !invincible)
         {
-            combatScript.removeHeroLife(1, enemy);
+            GameObject.Find("EventSystem").GetComponent<CombatScript>().removeHeroLife(1, enemy);
             invincible = true;
             Invoke("resetInvulnerability", 2);
         }

@@ -1788,6 +1788,7 @@ GameObject:
   - component: {fileID: 1386553718}
   - component: {fileID: 1386553720}
   - component: {fileID: 1386553719}
+  - component: {fileID: 1386553721}
   m_Layer: 5
   m_Name: WaitText
   m_TagString: Untagged
@@ -1852,6 +1853,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1386553717}
+--- !u!111 &1386553721
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1386553717}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 65a4e33d4227b4f418dc030e6725b53d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 65a4e33d4227b4f418dc030e6725b53d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1399780182
 GameObject:
   m_ObjectHideFlags: 0

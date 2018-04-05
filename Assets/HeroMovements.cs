@@ -91,9 +91,9 @@ public class HeroMovements : MonoBehaviour {
         canAttack = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider col)
     {
-        if (collision.gameObject.tag == "Exit")
+        if (col.gameObject.tag == "Exit")
         {
             animator.SetTrigger("Win");
             Invoke("restartLevel", 2);

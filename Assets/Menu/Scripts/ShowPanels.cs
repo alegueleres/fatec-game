@@ -101,7 +101,7 @@ public class ShowPanels : MonoBehaviour {
         }
         else
         {
-            return -25f;
+            return -15f;
         }
     }
 }

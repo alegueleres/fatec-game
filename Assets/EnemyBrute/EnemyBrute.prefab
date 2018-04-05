@@ -161,6 +161,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1077589573270748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4226518925708014}
+  - component: {fileID: 114908236731859310}
+  - component: {fileID: 65342323778085408}
+  m_Layer: 0
+  m_Name: CanSearch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1087952250750414
 GameObject:
   m_ObjectHideFlags: 1
@@ -1555,6 +1572,19 @@ Transform:
   m_Father: {fileID: 4897199849849590}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4226518925708014
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1077589573270748}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4766513594447434}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4257287796271382
 Transform:
   m_ObjectHideFlags: 1
@@ -2078,6 +2108,7 @@ Transform:
   - {fileID: 4569931829278788}
   - {fileID: 4320403360027762}
   - {fileID: 4328568407891926}
+  - {fileID: 4226518925708014}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -2414,6 +2445,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25106764, y: 0.047291756, z: 0.6336212}
   m_Center: {x: 0.5412104, y: -0.04341662, z: 0.732986}
+--- !u!65 &65342323778085408
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1077589573270748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.544273, y: 0.21402597, z: 16.04454}
+  m_Center: {x: -0.28440762, y: 0.31212354, z: -0.064846516}
 --- !u!65 &65683968605418754
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2434,7 +2477,7 @@ AudioSource:
   m_GameObject: {fileID: 1210247464885268}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300001, guid: 0ac7fb39e445048d89688f69c2a1839a,
+  OutputAudioMixerGroup: {fileID: 24301952, guid: 0ac7fb39e445048d89688f69c2a1839a,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
@@ -2568,8 +2611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9afe925fc3e55241aa4896c1dad5baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatScript: {fileID: 0}
-  hero: {fileID: 0}
   enemy: {fileID: 1210247464885268}
 --- !u!114 &114042164440585478
 MonoBehaviour:
@@ -2633,8 +2674,8 @@ MonoBehaviour:
   rotationIn2D: 0
   repathRate: 0.5
   target: {fileID: 0}
-  canSearch: 1
-  canMove: 1
+  canSearch: 0
+  canMove: 0
   speed: 1.5
   rotationSpeed: 360
   slowdownDistance: 0.6
@@ -2686,6 +2727,18 @@ MonoBehaviour:
   enemyHurtAudio: {fileID: 8300000, guid: 682320c8eb882294693e7b32d59b25bf, type: 3}
   enemyAttackAudio: {fileID: 8300000, guid: 550cd0db649ac1a4d8294ad8d48879bb, type: 3}
   enemyWinAudio: {fileID: 8300000, guid: bda96308e43b85545b47ccca2f0b371b, type: 3}
+--- !u!114 &114908236731859310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1077589573270748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b837c15dfc97f904885e75eb83a996d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1210247464885268}
 --- !u!136 &136918134111780526
 CapsuleCollider:
   m_ObjectHideFlags: 1
