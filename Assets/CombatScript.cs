@@ -62,6 +62,27 @@ public class CombatScript : MonoBehaviour {
         }
     }
 
+    public void removeHeroLifeFromTrap(int value)
+    {
+        GameLevelManager.removeScore(10);
+        heroLife = heroLife - value;
+        if (heroLife < 0)
+        {
+            heroLife = 0;
+        }
+        heartUI.sprite = heroLifeSprites[heroLife];
+
+        if (heroLife <= 0)
+        {
+            heroAnimator.SetBool("Died", true);
+            GameLevelManager.setGameOver(true);
+        }
+        else
+        {
+            heroAnimator.SetTrigger(Animator.StringToHash("Hurt"));
+        }
+    }
+
     public void addHeroLife(int value)
     {
         if (heroLife < 5)
