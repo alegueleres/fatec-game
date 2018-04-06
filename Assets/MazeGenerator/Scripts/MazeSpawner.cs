@@ -127,12 +127,7 @@ public class MazeSpawner : MonoBehaviour {
                     if (Wall.tag == "Fence")
                     {
                         enemySpawner = Random.Range(0, 40);
-                        if (countSpawn == 300)
-                        {
-                            tmp = Instantiate(TrapPrefab, new Vector3(x - 0.5f, -2f, z), Quaternion.Euler(0, 0, 0)) as GameObject;
-                            trapCount++;
-                        }
-                        else if (Random.Range(0, 10) == 0)
+                        if (Random.Range(0, 10) == 0)
                         {
                             tmp = Instantiate(PotionPrefabs[Random.Range(0, 2)], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 0, 0)) as GameObject;
                         }
@@ -140,7 +135,7 @@ public class MazeSpawner : MonoBehaviour {
                         {
                             if (Random.Range(0, 2) == 0)
                             {
-                                tmp = Instantiate(TrapPrefab, new Vector3(x - 0.5f, -2f, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+                                tmp = Instantiate(TrapPrefab, new Vector3(x - 0.5f, -2f, z + 0.5f), Quaternion.Euler(0, 0, 0)) as GameObject;
                                 trapCount++;
                             }
                             else

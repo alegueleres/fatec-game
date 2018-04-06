@@ -6,7 +6,13 @@ public class TrapAnimationScript : MonoBehaviour {
 
     public float seconds = 4;
 
-    public Animation animation;
+    public Animation animationTrap;
+
+    public AudioSource audioSource;
+
+    public AudioClip attack;
+
+    public AudioClip reload;
 
     private bool shouldPlay = true;
 	
@@ -14,7 +20,7 @@ public class TrapAnimationScript : MonoBehaviour {
 	void Update () {
         if(shouldPlay)
         {
-            animation.Play();
+            animationTrap.Play();
             Invoke("resetShouldPlay", seconds);
             shouldPlay = false;
         }
@@ -23,5 +29,15 @@ public class TrapAnimationScript : MonoBehaviour {
     void resetShouldPlay()
     {
         shouldPlay = true;
+    }
+
+    void trapAttack()
+    {
+        audioSource.PlayOneShot(attack);
+    }
+
+    void trapReload()
+    {
+        audioSource.PlayOneShot(reload);
     }
 }

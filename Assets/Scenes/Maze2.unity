@@ -581,6 +581,11 @@ Transform:
   m_Father: {fileID: 72895615}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 18.673246, y: 15.399046, z: -1.1874607}
+--- !u!111 &315396082 stripped
+Animation:
+  m_PrefabParentObject: {fileID: 111593255314810364, guid: 33ee1f1ff7dea4947bb31347d69ddf40,
+    type: 2}
+  m_PrefabInternal: {fileID: 1662557954}
 --- !u!1 &323960481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4120,6 +4125,11 @@ Prefab:
       propertyPath: seconds
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114419611075512596, guid: 33ee1f1ff7dea4947bb31347d69ddf40,
+        type: 2}
+      propertyPath: animationTrap
+      value: 
+      objectReference: {fileID: 315396082}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33ee1f1ff7dea4947bb31347d69ddf40, type: 2}
   m_IsPrefabParent: 0
