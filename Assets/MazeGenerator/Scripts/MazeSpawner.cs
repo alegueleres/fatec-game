@@ -131,7 +131,7 @@ public class MazeSpawner : MonoBehaviour {
                         {
                             tmp = Instantiate(PotionPrefabs[Random.Range(0, 2)], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 0, 0)) as GameObject;
                         }
-                        else if (enemySpawner < 15 && countSpawn > 20)
+                        else if (enemySpawner < 15 && countSpawn > 20 && countSpawn != 900)
                         {
                             if (Random.Range(0, 2) == 0)
                             {
@@ -145,13 +145,13 @@ public class MazeSpawner : MonoBehaviour {
                                 tmp.GetComponent<AIPath>().target = hero;
                             }
                         }
-                        else if (enemySpawner < 25 && countSpawn > 200)
+                        else if (enemySpawner < 25 && countSpawn > 200 && countSpawn != 900)
                         {
                             tmp = Instantiate(EnemyPrefabs[1], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
                             tmp.GetComponent<AIPath>().target = hero;
                             zombieCount++;
                         }
-                        else if (enemySpawner < 30 && countSpawn > 600)
+                        else if (enemySpawner < 30 && countSpawn > 600 && countSpawn != 900)
                         {
                             tmp = Instantiate(EnemyPrefabs[0], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
                             tmp.GetComponent<AIPath>().target = hero;
@@ -167,19 +167,19 @@ public class MazeSpawner : MonoBehaviour {
                     {
                         tmp = Instantiate(PotionPrefabs[Random.Range(0, 2)], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 0, 0)) as GameObject;
                     }
-                    else if (enemySpawner < 4 && countSpawn > 30)
+                    else if (enemySpawner < 4 && countSpawn > 30 && countSpawn != 900)
                     {
                         tmp = Instantiate(EnemyPrefabs[2], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
                         tmp.GetComponent<AIPath>().target = hero;
                         minionCount++;
                     }
-                    else if (enemySpawner < 6 && countSpawn > 300)
+                    else if (enemySpawner < 6 && countSpawn > 300 && countSpawn != 900)
                     {
                         tmp = Instantiate(EnemyPrefabs[1], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
                         tmp.GetComponent<AIPath>().target = hero;
                         zombieCount++;
                     }
-                    else if (enemySpawner < 7 && countSpawn > 700)
+                    else if (enemySpawner < 7 && countSpawn > 700 && countSpawn != 900)
                     {
                         tmp = Instantiate(EnemyPrefabs[0], new Vector3(x, -0.2f, z), Quaternion.Euler(0, 180, 0)) as GameObject;
                         tmp.GetComponent<AIPath>().target = hero;

@@ -8,7 +8,8 @@ public class PlayMusic : MonoBehaviour {
 
 	public AudioClip titleMusic;					//Assign Audioclip for title music loop
 	public AudioClip mainMusic;						//Assign Audioclip for main 
-	public AudioMixerSnapshot volumeDown;			//Reference to Audio mixer snapshot in which the master volume of main mixer is turned down
+    public AudioClip secondMusic;                    //Assign Audioclip for main 
+    public AudioMixerSnapshot volumeDown;			//Reference to Audio mixer snapshot in which the master volume of main mixer is turned down
 	public AudioMixerSnapshot volumeUp;				//Reference to Audio mixer snapshot in which the master volume of main mixer is turned up
     public AudioMixer audioMixer;
     public GameObject optionsPanel;
@@ -39,7 +40,10 @@ public class PlayMusic : MonoBehaviour {
 			case 1:
 				musicSource.clip = mainMusic;
 				break;
-		}
+            case 2:
+                musicSource.clip = secondMusic;
+                break;
+        }
 		//Fade up the volume very quickly, over resetTime seconds (.01 by default)
 		FadeUp (resetTime);
 		//Play the assigned music clip in musicSource
@@ -61,7 +65,10 @@ public class PlayMusic : MonoBehaviour {
 		case 1:
 			musicSource.clip = mainMusic;
 			break;
-		}
+        case 2:
+            musicSource.clip = secondMusic;
+            break;
+        }
 		//Play the selected clip
 		musicSource.Play ();
 	}

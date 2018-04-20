@@ -167,4 +167,11 @@ public class StartOptions : MonoBehaviour {
             loadingScreen.SetActive(false);
         }
     }
+
+    public void ChangeScene(int sceneIndex)
+    {
+        playMusic.FadeUp(fastFadeIn);
+        playMusic.PlaySelectedMusic(2);
+        StartCoroutine(LoadAsynchronously(sceneIndex));
+    }
 }

@@ -13,6 +13,9 @@ TagManager:
   - Sword
   - Axe
   - Exit
+  - Fence
+  - Effect
+  - SandWall
   layers:
   - Default
   - TransparentFX

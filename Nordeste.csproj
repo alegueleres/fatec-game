@@ -100,6 +100,7 @@
     <Compile Include="Assets\EnemyBrute\EnemyScript.cs" />
     <Compile Include="Assets\EnemyLifeScript.cs" />
     <Compile Include="Assets\EnemySoundScript.cs" />
+    <Compile Include="Assets\ExitScript.cs" />
     <Compile Include="Assets\FollowCamera.cs" />
     <Compile Include="Assets\GameLevelManager.cs" />
     <Compile Include="Assets\HeroMovements.cs" />

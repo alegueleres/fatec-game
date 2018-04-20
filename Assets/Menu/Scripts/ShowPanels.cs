@@ -34,8 +34,11 @@ public class ShowPanels : MonoBehaviour {
 	//Call this function to deactivate and hide the Options panel during the main menu
 	public void HideOptionsPanel()
 	{
-		optionsPanel.SetActive(false);
-		optionsTint.SetActive(false);
+        if (!creditsPanel.active && !creditsTint.active)
+        {
+            optionsPanel.SetActive(false);
+            optionsTint.SetActive(false);
+        }
 	}
 
     //Call this function to activate and display the Credits panel during the main menu
