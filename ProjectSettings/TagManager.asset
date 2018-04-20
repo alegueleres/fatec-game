@@ -16,6 +16,8 @@ TagManager:
   - Fence
   - Effect
   - SandWall
+  - BestScoreText
+  - ScoreText
   layers:
   - Default
   - TransparentFX

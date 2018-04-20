@@ -96,6 +96,9 @@
     <Compile Include="Assets\AstarAI.cs" />
     <Compile Include="Assets\AxeScript.cs" />
     <Compile Include="Assets\CanSearchScript.cs" />
+    <Compile Include="Assets\CasualGameUI\Demo\DemoToggle.cs" />
+    <Compile Include="Assets\CasualGameUI\Demo\MultiImageButton.cs" />
+    <Compile Include="Assets\CasualGameUI\Demo\ShowNextOnClick.cs" />
     <Compile Include="Assets\CombatScript.cs" />
     <Compile Include="Assets\EnemyBrute\EnemyScript.cs" />
     <Compile Include="Assets\EnemyLifeScript.cs" />
@@ -103,6 +106,7 @@
     <Compile Include="Assets\ExitScript.cs" />
     <Compile Include="Assets\FollowCamera.cs" />
     <Compile Include="Assets\GameLevelManager.cs" />
+    <Compile Include="Assets\GameOverScript.cs" />
     <Compile Include="Assets\HeroMovements.cs" />
     <Compile Include="Assets\HeroSoundScript.cs" />
     <Compile Include="Assets\HPParticle\Scripts\AlwaysFace.cs" />
@@ -150,6 +154,7 @@
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\Navmesh.shader" />
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
     <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
+    <None Include="Assets\CasualGameUI\Fonts\1001fonts-riffic-eula.txt" />
     <None Include="Assets\Low Polygon Potions Pack\Readme.txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\Neverwinter.txt" />

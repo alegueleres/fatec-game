@@ -155,6 +155,7 @@
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\Navmesh.shader" />
     <None Include="Assets\AstarPathfindingEditor\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
     <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
+    <None Include="Assets\CasualGameUI\Fonts\1001fonts-riffic-eula.txt" />
     <None Include="Assets\Low Polygon Potions Pack\Readme.txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Menu\Fonts\OpenSans\Neverwinter.txt" />

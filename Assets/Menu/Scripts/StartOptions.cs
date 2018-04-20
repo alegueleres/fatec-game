@@ -7,12 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class StartOptions : MonoBehaviour {
 
-
-
 	public int sceneToStart = 1;										//Index number in build settings of scene to load if changeScenes is true
 	public bool changeScenes;											//If true, load a new scene when Start is pressed, if false, fade out UI and continue in single scene
 	public bool changeMusicOnStart;										//Choose whether to continue playing menu music or start a new music clip
     public GameObject loadingScreen;
+    public GameObject gameOverScreen;
     public Slider loadSlider;
     public Text loadProgressText;
     public Text waitText;
@@ -38,7 +37,8 @@ public class StartOptions : MonoBehaviour {
 		//Get a reference to PlayMusic attached to UI object
 		playMusic = GetComponent<PlayMusic> ();
         loadingScreen.SetActive(false);
-	}
+        gameOverScreen.SetActive(false);
+    }
 
 
 	public void StartButtonClicked()

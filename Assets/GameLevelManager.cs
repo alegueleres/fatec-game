@@ -25,8 +25,7 @@ public class GameLevelManager : MonoBehaviour {
             {
                 PlayerPrefs.SetInt("highscore", score);
             }
-            gameOverText.enabled = true;
-            gameOverText.text = "Você perdeu. \nPontuação: " + score.ToString() + ". Sua maior pontuação foi: " + PlayerPrefs.GetInt("highscore");
+            GameObject.Find("UI").GetComponent<GameOverScript>().EnableScreen(score);
         } else
         {
             gameOverText.enabled = false;
