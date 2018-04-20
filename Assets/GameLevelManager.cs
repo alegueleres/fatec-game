@@ -11,6 +11,11 @@ public class GameLevelManager : MonoBehaviour {
     private static bool isGameOver = false;
     private bool scanPath = true;
 
+    void Start()
+    {
+        StartCoroutine(losePoints());
+    }
+
     void Update()
     {
         if (scanPath)
@@ -18,7 +23,7 @@ public class GameLevelManager : MonoBehaviour {
             AstarPath.active.Scan();
             scanPath = false;
         }
-        text.text = "Pontuação: " + score.ToString();
+        text.text = score.ToString();
         if (isGameOver)
         {
             if (score > PlayerPrefs.GetInt("highscore"))
@@ -56,6 +61,19 @@ public class GameLevelManager : MonoBehaviour {
     public static void resetScore()
     {
         score = 0;
+        setGameOver(false);
+    }
+
+    IEnumerator losePoints()
+    {
+        while (true)
+        {
+            if (score > 0)
+            {
+                score -= 1;
+            }
+            yield return new WaitForSeconds(30);
+        }
     }
 
 }

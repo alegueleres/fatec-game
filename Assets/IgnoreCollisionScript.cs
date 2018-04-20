@@ -15,4 +15,5 @@ public class IgnoreCollisionScript : MonoBehaviour {
             Physics.IgnoreCollision(collision.collider, this.GetComponent<CapsuleCollider>());
         }
     }
+
 }
