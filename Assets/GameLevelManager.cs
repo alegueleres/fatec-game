@@ -8,6 +8,7 @@ public class GameLevelManager : MonoBehaviour {
     private static int score;
     public Text text;
     public Text gameOverText;
+    public int pointsToButterflyStartSearch = 100;
     private static bool isGameOver = false;
     private bool scanPath = true;
 
@@ -64,9 +65,19 @@ public class GameLevelManager : MonoBehaviour {
         setGameOver(false);
     }
 
+    public int getButterflyHelpPoints()
+    {
+        return pointsToButterflyStartSearch;
+    }
+
+    public int getScore()
+    {
+        return score;
+    }
+
     IEnumerator losePoints()
     {
-        while (true)
+        while (!isGameOver)
         {
             if (score > 0)
             {
