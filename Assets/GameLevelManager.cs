@@ -12,11 +12,6 @@ public class GameLevelManager : MonoBehaviour {
     private static bool isGameOver = false;
     private bool scanPath = true;
 
-    void Start()
-    {
-        StartCoroutine(losePoints());
-    }
-
     void Update()
     {
         if (scanPath)
@@ -73,18 +68,6 @@ public class GameLevelManager : MonoBehaviour {
     public int getScore()
     {
         return score;
-    }
-
-    IEnumerator losePoints()
-    {
-        while (!isGameOver)
-        {
-            if (score > 0)
-            {
-                score -= 1;
-            }
-            yield return new WaitForSeconds(30);
-        }
     }
 
 }

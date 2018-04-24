@@ -93,7 +93,7 @@ bf957cb98e0a41dc83ee17c881aa0877 Assembly-CSharp.dll:.HeroMovements
 a7f1934e89912d6fb1971defffa70f44 Assembly-CSharp.dll:.CombatScript
 67d064f40a0cdf10f867a57e906210e1 Assembly-CSharp.dll:.FollowCamera
 f3dfbd57099ffdbcdf4662d88b9ee6dd Assembly-CSharp-firstpass.dll:Pathfinding.FunnelModifier
-6e5e57ff32670b6bd89a201b5f5db4c1 Assembly-CSharp.dll:.PlayMusic
+29599465f443f3b4243a759d5f50e3dc Assembly-CSharp.dll:.PlayMusic
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9f07aaefd0255462bb6e4f9e5da6b2d4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -109,7 +109,7 @@ c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 ec7f8dd5a87a882c11e9e9dff9de6ab6 Assembly-CSharp.dll:.GameLevelManager
 27ea4262e47c9f88e73c01bf087b0cb8 Assembly-CSharp-firstpass.dll:.SingleNodeBlocker
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Pause
-e7e6be587cf6db3317c54d79c66c8327 Assembly-CSharp.dll:.GameOverScript
+2ef029dcc4c5ce8034e8b75b4a6a36fe Assembly-CSharp.dll:.GameOverScript
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -145,12 +145,12 @@ ad0f126fcba09821bc39d20a791e1921 Assembly-CSharp-firstpass.dll:Pathfinding.NodeL
 a2efb0db652b8114d1ae7dd9a600d626 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.InputAxisScrollbar
 ce1c068de166ec4b92c2d29768bb6b1a Assembly-CSharp.dll:.GUIHPParticleScript
 fe76270bd84ec3b6f2f6f92c69cf69da Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.AxisTouchButton
-bc844ad5064db662cf24939d9b6241fa Assembly-CSharp.dll:.StartOptions
+9c19b62e721b85f6994c02b176d18b81 Assembly-CSharp.dll:.StartOptions
 36b20e59d90b43844854cf869b5cc223 Assembly-CSharp.dll:.MazeScript
 a7d3c6c6948d99dd4116e659ddcf5ac4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.ButtonHandler
 4d146f8d27f4cda497b4c9680b56ad91 Assembly-CSharp.dll:.GUICameraScript
 49cd62a578efc0a599b810a2b66cd49c Assembly-CSharp.dll:.MultiImageButton
-da92cf9948c6a80e3b8a6f90d4a01337 Assembly-CSharp.dll:.ShowPanels
+406598ea4627d4a0bd1db92eff254e83 Assembly-CSharp.dll:.ShowPanels
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DontDestroy
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.QuitFullApplication
 66474d62bc14e32296e0e095ba1d99f2 Assembly-CSharp.dll:.HeroSoundScript

@@ -9,6 +9,7 @@ public class PlayMusic : MonoBehaviour {
 	public AudioClip titleMusic;					//Assign Audioclip for title music loop
 	public AudioClip mainMusic;						//Assign Audioclip for main 
     public AudioClip secondMusic;                    //Assign Audioclip for main 
+    public AudioClip creditsMusic;                    //Assign Audioclip for main 
     public AudioMixerSnapshot volumeDown;			//Reference to Audio mixer snapshot in which the master volume of main mixer is turned down
 	public AudioMixerSnapshot volumeUp;				//Reference to Audio mixer snapshot in which the master volume of main mixer is turned up
     public AudioMixer audioMixer;
@@ -43,6 +44,9 @@ public class PlayMusic : MonoBehaviour {
             case 2:
                 musicSource.clip = secondMusic;
                 break;
+            case 3:
+                musicSource.clip = creditsMusic;
+                break;
         }
 		//Fade up the volume very quickly, over resetTime seconds (.01 by default)
 		FadeUp (resetTime);
@@ -67,6 +71,9 @@ public class PlayMusic : MonoBehaviour {
 			break;
         case 2:
             musicSource.clip = secondMusic;
+            break;
+        case 3:
+            musicSource.clip = creditsMusic;
             break;
         }
 		//Play the selected clip

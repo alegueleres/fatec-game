@@ -20,7 +20,7 @@ public class ExitScript : MonoBehaviour {
         if (other.tag == "Hero" && SceneManager.GetActiveScene().name == "Maze2")
         {
             Pause.DoPause();
-            GameLevelManager.setGameOver(true);
+            GameObject.Find("UI").GetComponent<GameOverScript>().EnableCreditsScreen(GameObject.Find("EventSystem").GetComponent<GameLevelManager>().getScore());
         }
     }
 }

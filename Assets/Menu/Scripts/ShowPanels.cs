@@ -9,7 +9,6 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject menuPanel;							//Store a reference to the Game Object MenuPanel 
 	public GameObject pausePanel;							//Store a reference to the Game Object PausePanel
     public GameObject creditsPanel;                         //Store a reference to the Game Object CreditsPanel
-    public GameObject creditsTint;							//Store a reference to the Game Object CreditsTint 
     public AudioMixer audioMixer;
 
 
@@ -34,7 +33,7 @@ public class ShowPanels : MonoBehaviour {
 	//Call this function to deactivate and hide the Options panel during the main menu
 	public void HideOptionsPanel()
 	{
-        if (!creditsPanel.active && !creditsTint.active)
+        if (!creditsPanel.active)
         {
             optionsPanel.SetActive(false);
             optionsTint.SetActive(false);
@@ -45,7 +44,6 @@ public class ShowPanels : MonoBehaviour {
     public void ShowCreditsPanel()
     {
         creditsPanel.SetActive(true);
-        creditsTint.SetActive(true);
         optionsPanel.transform.Find("CreditsBack").gameObject.SetActive(true);
         optionsPanel.transform.Find("Credits").gameObject.SetActive(false);
     }
@@ -54,7 +52,6 @@ public class ShowPanels : MonoBehaviour {
     public void HideCreditsPanel()
     {
         creditsPanel.SetActive(false);
-        creditsTint.SetActive(false);
         optionsPanel.transform.Find("Credits").gameObject.SetActive(true);
         optionsPanel.transform.Find("CreditsBack").gameObject.SetActive(false);
     }

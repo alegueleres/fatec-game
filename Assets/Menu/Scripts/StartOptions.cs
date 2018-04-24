@@ -12,9 +12,11 @@ public class StartOptions : MonoBehaviour {
 	public bool changeMusicOnStart;										//Choose whether to continue playing menu music or start a new music clip
     public GameObject loadingScreen;
     public GameObject gameOverScreen;
+    public GameObject creditsEndScreen;
     public Slider loadSlider;
     public Text loadProgressText;
     public Text waitText;
+    public Text historyText;
 
 
     [HideInInspector] public bool inMainMenu = true;					//If true, pause button disabled in main menu (Cancel in input manager, default escape key)
@@ -38,6 +40,7 @@ public class StartOptions : MonoBehaviour {
 		playMusic = GetComponent<PlayMusic> ();
         loadingScreen.SetActive(false);
         gameOverScreen.SetActive(false);
+        creditsEndScreen.SetActive(false);
     }
 
 
@@ -145,8 +148,15 @@ public class StartOptions : MonoBehaviour {
         operation.allowSceneActivation = false;
 
         loadingScreen.SetActive(true);
+        if (sceneIndex == 1)
+        {
+            historyText.text = "A borboleta Go está pronta para auxiliar em sua sobrevivência. Encontre o final do labirinto e fuja desse deserto traiçoeiro.";
+        } else if (sceneIndex == 2)
+        {
+            historyText.text = "\"O que aconteceu? Como vim parar nesse lugar? Mas não desistirei, vamos Go! Encontraremos quem está fazendo isso conosco...\"";
+        }
 
-        while(!operation.isDone)
+        while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
             loadSlider.value = progress;
@@ -165,13 +175,21 @@ public class StartOptions : MonoBehaviour {
         if(operation.isDone)
         {
             loadingScreen.SetActive(false);
+            Pause.UnPause();
         }
     }
 
     public void ChangeScene(int sceneIndex)
     {
         playMusic.FadeUp(fastFadeIn);
-        playMusic.PlaySelectedMusic(2);
-        StartCoroutine(LoadAsynchronously(sceneIndex));
+        playMusic.PlaySelectedMusic(sceneIndex);
+        if (sceneIndex == 3)
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
+        else
+        {
+            StartCoroutine(LoadAsynchronously(sceneIndex));
+        }
     }
 }
